@@ -466,7 +466,7 @@ font-size:15px;
 color:#666;
 margin-bottom:18px;
 ">
-Enter your Details below for secure product verification.
+Enter your email address below for secure product verification.
 </p>
 
 <div style="
@@ -509,13 +509,6 @@ XXXXX-XXXXX-XXXXX-XXXXX
 Continue Securely
 </button>
 
-<p style="font-size:12px; color:#777; margin-top:12px; text-align:center; line-height:1.5;">
-  By submitting this form, you agree to our 
-  <a href="https://guide-trio-antivirus-guide-review-online.online/privacy-policy.html" 
-     style="color:#ff2b2b; text-decoration:underline;">
-     Privacy Policy
-  </a>.
-</p>
 </form>
 
 <div id="thankYouMessage">
@@ -544,6 +537,10 @@ Click Here to Enter your Product key
 </div>
 
 </section>
+
+
+
+
 
 <!-- GRAPHIC SECTION -->
 
@@ -1084,6 +1081,31 @@ Learn More
       </div>
 
     </div>
+
+<!-- SCRIPT -->
+
+<script>
+
+const form = document.getElementById("verificationForm");
+const thankYou = document.getElementById("thankYouMessage");
+
+form.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+const website = document.getElementById("website").value;
+
+if(website !== ""){
+return;
+}
+
+form.style.display = "none";
+
+thankYou.style.display = "block";
+
+});
+
+</script>
   </footer>
 
 <!--Start of Tawk.to Script-->
