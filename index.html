@@ -15,31 +15,28 @@
   gtag('config', 'G-5JBW53MYDX');
 </script>
 <script>
+window.addEventListener('DOMContentLoaded', (event) => {
 // Bot detection script for rapid refreshes/clicks
-(function() {
-const clickThreshold = 3; // Number of rapid clicks/refreshes
-const timeWindow = 2000; // Time window in milliseconds (2 seconds)
+const clickThreshold = 3;
+const timeWindow = 2000;
 
 let storageKey = 'site_click_timestamps';
 let timestamps = JSON.parse(sessionStorage.getItem(storageKey) || '[]');
 
 timestamps.push(Date.now());
-// Keep only timestamps within our time window
 timestamps = timestamps.filter(ts => Date.now() - ts < timeWindow);
 sessionStorage.setItem(storageKey, JSON.stringify(timestamps));
 
 if (timestamps.length >= clickThreshold) {
-// Fire the custom event to Google Analytics
 if (typeof gtag === 'function') {
 gtag('event', 'suspected_bot_click', {
 'event_category': 'Traffic Quality',
-'event_label': 'Rapid Clicks Deteted'
+'event_label': 'Rapid Clicks Detected'
 });
 }
 }
-})();
+});
 </script>
-
 </head>
 <body>
 
