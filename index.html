@@ -1,10 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Trio Antivirus Review</title>
-  <link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="style.css">
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5JBW53MYDX"></script>
 <script>
@@ -14,29 +10,37 @@
 
   gtag('config', 'G-5JBW53MYDX');
 </script>
+
 <script>
-window.addEventListener('DOMContentLoaded', (event) => {
-// Bot detection script for rapid refreshes/clicks
-const clickThreshold = 3;
-const timeWindow = 2000;
-
-let storageKey = 'site_click_timestamps';
-let timestamps = JSON.parse(sessionStorage.getItem(storageKey) || '[]');
-
-timestamps.push(Date.now());
-timestamps = timestamps.filter(ts => Date.now() - ts < timeWindow);
-sessionStorage.setItem(storageKey, JSON.stringify(timestamps));
-
-if (timestamps.length >= clickThreshold) {
-if (typeof gtag === 'function') {
-gtag('event', 'suspected_bot_click', {
-'event_category': 'Traffic Quality',
-'event_label': 'Rapid Clicks Detected'
-});
-}
-}
+window.addEventListener('click', () => {
+    // Bot detection script for rapid clicks
+    const clickThreshold = 3;
+    const timeWindow = 2000;
+    
+    let storageKey = 'site_click_timestamps';
+    let timestamps = JSON.parse(sessionStorage.getItem(storageKey) || '[]');
+    
+    timestamps.push(Date.now());
+    timestamps = timestamps.filter(ts => Date.now() - ts < timeWindow);
+    sessionStorage.setItem(storageKey, JSON.stringify(timestamps));
+    
+    if (timestamps.length >= clickThreshold) {
+        if (typeof gtag === 'function') {
+            gtag('event', 'suspected_bot_click', {
+                'event_category': 'Traffic Quality',
+                'event_label': 'Rapid Clicks Detected'
+            });
+        }
+    }
 });
 </script>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trio Antivirus Review</title>
+  <link rel="stylesheet" href="style.css"/>
+
 </head>
 <body>
 
